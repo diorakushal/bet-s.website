@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BETS Logo Generator</title>
+    <style>
+        body {
+            background: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        .logo-container {
+            text-align: center;
+        }
+        .logo-svg {
+            margin-bottom: 20px;
+        }
+        .instructions {
+            color: #ffffff;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .download-btn {
+            background: #ffffff;
+            color: #000000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo-svg">
+            <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#666666;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#444444;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                
+                <!-- Background circle -->
+                <circle cx="256" cy="256" r="240" fill="none" stroke="url(#logoGradient)" stroke-width="2" opacity="0.1"/>
+                
+                <!-- Abstract geometric icon (left side) -->
+                <g transform="translate(120, 156)">
+                    <!-- Main geometric shape - stylized B or shield -->
+                    <path d="M0 0 L40 0 L40 80 L0 80 Z" fill="url(#logoGradient)" opacity="0.9"/>
+                    
+                    <!-- Internal grid pattern -->
+                    <rect x="8" y="8" width="24" height="8" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.6"/>
+                    <rect x="8" y="24" width="24" height="8" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.6"/>
+                    <rect x="8" y="40" width="24" height="8" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.6"/>
+                    <rect x="8" y="56" width="24" height="8" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.6"/>
+                    
+                    <!-- Vertical dividers -->
+                    <line x1="16" y1="8" x2="16" y2="64" stroke="url(#logoGradient)" stroke-width="1" opacity="0.4"/>
+                    <line x1="24" y1="8" x2="24" y2="64" stroke="url(#logoGradient)" stroke-width="1" opacity="0.4"/>
+                </g>
+                
+                <!-- BETS text (right side) -->
+                <g transform="translate(200, 180)">
+                    <text x="0" y="0" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" fill="url(#logoGradient)" letter-spacing="2">
+                        BETS
+                    </text>
+                </g>
+            </svg>
+        </div>
+        
+        <div class="instructions">
+            <h2>BETS Logo</h2>
+            <p>This is a representation of your BETS logo based on the description provided. The logo features:</p>
+            <ul style="text-align: left;">
+                <li>Abstract geometric icon with grid-like internal pattern</li>
+                <li>Bold "BETS" text in capital letters</li>
+                <li>Dark gray color scheme for subtle contrast</li>
+                <li>Modern, minimalist design aesthetic</li>
+            </ul>
+            
+            <p><strong>To use this logo:</strong></p>
+            <ol style="text-align: left;">
+                <li>Right-click on the logo above and select "Save image as..."</li>
+                <li>Save it as "logo.png" in your project folder</li>
+                <li>The landing page will automatically use this logo</li>
+            </ol>
+            
+            <p><strong>Alternative:</strong> You can also replace the SVG code in the HTML files with your actual logo file path.</p>
+        </div>
+        
+        <div>
+            <button onclick="downloadLogo()" class="download-btn">Download Logo</button>
+            <a href="index.html" class="download-btn">View Landing Page</a>
+        </div>
+    </div>
+
+    <script>
+        function downloadLogo() {
+            const svg = document.querySelector('svg');
+            const svgData = new XMLSerializer().serializeToString(svg);
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            canvas.width = 512;
+            canvas.height = 512;
+            
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0);
+                const pngFile = canvas.toDataURL('image/png');
+                const downloadLink = document.createElement('a');
+                downloadLink.download = 'bets-logo.png';
+                downloadLink.href = pngFile;
+                downloadLink.click();
+            };
+            
+            img.src = 'data:image/svg+xml;base64,' + btoa(svgData);
+        }
+    </script>
+</body>
+</html>
