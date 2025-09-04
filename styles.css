@@ -929,20 +929,78 @@ body {
 }
 
 .contact-info {
-    margin-top: 32px;
-    padding-top: 24px;
+    margin-top: 16px;
+    padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0;
 }
 
 .contact-info a {
-    color: #ffffff;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    transition: border-color 0.3s ease;
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    border-bottom: none;
+    transition: opacity 0.3s ease;
+    display: inline-block;
+    margin-top: 4px;
 }
 
 .contact-info a:hover {
-    border-color: #ffffff;
+    opacity: 0.8;
+    color: #ffffff !important;
+}
+
+.modal-body a {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    text-decoration-color: #ffffff !important;
+    transition: opacity 0.3s ease;
+}
+
+.modal-body a:hover {
+    opacity: 0.8;
+    color: #ffffff !important;
+    text-decoration-color: #ffffff !important;
+}
+
+/* Force white links in modal body - more specific rules */
+.modal-body a:link,
+.modal-body a:visited,
+.modal-body a:active {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    text-decoration-color: #ffffff !important;
+    text-decoration-thickness: 1px !important;
+}
+
+.modal-body a:hover,
+.modal-body a:focus {
+    opacity: 0.8;
+    color: #ffffff !important;
+    text-decoration-color: #ffffff !important;
+    text-decoration-thickness: 1px !important;
+}
+
+/* Ultra-specific rules for terms modal links */
+#termsModal .modal-body a,
+#termsModal .modal-body a:link,
+#termsModal .modal-body a:visited,
+#termsModal .modal-body a:active,
+#termsModal .modal-body a:hover,
+#termsModal .modal-body a:focus {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    text-decoration-color: #ffffff !important;
+    text-decoration-thickness: 1px !important;
+    border-bottom: none !important;
+    background: none !important;
+}
+
+.modal-body h3:last-of-type {
+    margin-bottom: 8px;
+}
+
+.modal-body p:last-of-type {
+    margin-bottom: 0;
 }
 
 /* Responsive Design */
