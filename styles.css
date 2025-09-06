@@ -1005,7 +1005,7 @@ body {
 
 /* Legal Pages */
 .legal-page {
-    padding: 120px 0 100px;
+    padding: 120px 0 80px;
     background: #000000;
     min-height: 100vh;
 }
@@ -1082,23 +1082,17 @@ body {
     text-decoration-color: #ffffff !important;
 }
 
-/* Force white links in legal pages */
-.legal-content a,
-.legal-content a:link,
-.legal-content a:visited,
-.legal-content a:active {
+.legal-content a {
     color: #ffffff !important;
     text-decoration: underline !important;
     text-decoration-color: #ffffff !important;
-    text-decoration-thickness: 1px !important;
+    transition: opacity 0.3s ease;
 }
 
-.legal-content a:hover,
-.legal-content a:focus {
+.legal-content a:hover {
     opacity: 0.8;
     color: #ffffff !important;
     text-decoration-color: #ffffff !important;
-    text-decoration-thickness: 1px !important;
 }
 
 /* Responsive Design */
