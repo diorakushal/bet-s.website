@@ -1003,6 +1003,104 @@ body {
     margin-bottom: 0;
 }
 
+/* Legal Pages */
+.legal-page {
+    padding: 120px 0 100px;
+    background: #000000;
+    min-height: 100vh;
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.legal-content h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.legal-content h3 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 32px 0 16px 0;
+}
+
+.legal-content h3:first-of-type {
+    margin-top: 0;
+}
+
+.legal-content h4 {
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 24px 0 12px 0;
+}
+
+.legal-content p {
+    margin-bottom: 16px;
+}
+
+.legal-content ul {
+    margin: 16px 0;
+    padding-left: 24px;
+}
+
+.legal-content li {
+    margin-bottom: 8px;
+}
+
+.effective-date {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.legal-content .contact-info {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0;
+}
+
+.legal-content .contact-info a {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    text-decoration-color: #ffffff !important;
+    transition: opacity 0.3s ease;
+}
+
+.legal-content .contact-info a:hover {
+    opacity: 0.8;
+    color: #ffffff !important;
+    text-decoration-color: #ffffff !important;
+}
+
+/* Force white links in legal pages */
+.legal-content a,
+.legal-content a:link,
+.legal-content a:visited,
+.legal-content a:active {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    text-decoration-color: #ffffff !important;
+    text-decoration-thickness: 1px !important;
+}
+
+.legal-content a:hover,
+.legal-content a:focus {
+    opacity: 0.8;
+    color: #ffffff !important;
+    text-decoration-color: #ffffff !important;
+    text-decoration-thickness: 1px !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
